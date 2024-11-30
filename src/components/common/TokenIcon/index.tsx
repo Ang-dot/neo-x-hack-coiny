@@ -1,6 +1,7 @@
 import { type ReactElement } from 'react'
 import ImageFallback from '../ImageFallback'
 import css from './styles.module.css'
+import classNames from 'classnames'
 import classnames from 'classnames'
 
 const FALLBACK_ICON = '/images/common/token-placeholder.svg'
