@@ -119,7 +119,7 @@ const WebCoreApp = ({
   return (
     <Provider store={reduxStore}>
       <Head>
-        <title key="default-title">Ka-Ching: AI Agent-Powered Multisig Wallet</title>
+        <title key="default-title">Coiny: AI Agent-Powered Multisig Wallet</title>
         <MetaTags prefetchUrl={GATEWAY_URL} />
       </Head>
 

@@ -15,6 +15,10 @@ import useSafeAddress from '@/hooks/useSafeAddress'
 import { FEATURES } from '@/utils/chains'
 import { useHasFeature } from '@/hooks/useChains'
 import { useSafeTokenEnabled } from '@/hooks/useSafeTokenEnabled'
+import { useVisibleBalances } from '@/hooks/useVisibleBalances'
+import FiatValue from '@/components/common/FiatValue'
+import TokenAmount from '@/components/common/TokenAmount'
+import useSafeInfo from '@/hooks/useSafeInfo'
 
 type HeaderProps = {
   onMenuToggle?: Dispatch<SetStateAction<boolean>>
@@ -35,6 +39,8 @@ const Header = ({ onMenuToggle, onBatchToggle }: HeaderProps): ReactElement => {
   const isProposer = useIsWalletProposer()
   const isSafeOwner = useIsSafeOwner()
   const router = useRouter()
+  const { balances, loading: balancesLoading } = useVisibleBalances()
+  const { safe, safeLoading, safeLoaded } = useSafeInfo()
   const enableWc = useHasFeature(FEATURES.NATIVE_WALLETCONNECT)
 
   // If on the home page, the logo should link to the Accounts or Welcome page, otherwise to the home page
@@ -59,19 +65,42 @@ const Header = ({ onMenuToggle, onBatchToggle }: HeaderProps): ReactElement => {
   return (
     <Paper className="flex flex-row flex-nowrap items-center relative h-14 bg-[#FFF0BE] px-4 rounded-none border-b-2 border-black">
       <Link href="/home" className="md:ml-10 text-2xl font-nountown text-black flex grow">
-        Ka-Ching
+        Coiny
       </Link>
 
       <Link href="/game" className="text-md font-londrina animate-pulse text-pink-500 flex grow hover:text-pink-700 transition-colors" target='_blank'>
-        Dare to play? Loser pays the gas fee! 🎮
+        Game On? Loser covers the gas fee! 🎮
       </Link>
 
       <div className={classnames('flex flex-row items-center', { 'md:mr-10': !safeAddress })}>
         <ConnectWallet />
 
         {safeAddress && (
-          <div className={classnames(css.element, css.networkSelector)}>
-            <NetworkSelector offerSafeCreation />
+          // <div className={classnames(css.element, css.networkSelector)}>
+          //   <NetworkSelector offerSafeCreation />
+          // </div>
+          <div className="flex items-center gap-3 ps-5">
+            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-black">
+              <img
+                src="/Gas.png"
+                alt="Gas Icon"
+                width={32}
+                height={32}
+                className="object-contain p-1.5"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-bold">Neo X Mainnet</span>
+              {/* {safe.deployed ? (
+                <FiatValue value={balances.fiatTotal} maxLength={20} precise />
+              ) : (
+                <TokenAmount
+                  value={balances.items[0].balance}
+                  decimals={balances.items[0].tokenInfo.decimals}
+                  tokenSymbol={balances.items[0].tokenInfo.symbol}
+                />
+              )} */}
+            </div>
           </div>
         )}
       </div>

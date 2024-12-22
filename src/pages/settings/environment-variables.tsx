@@ -7,7 +7,7 @@ const EnvironmentVariablesPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ka-Ching – Settings – Environment variables'}</title>
+        <title>{'Coiny – Settings – Environment variables'}</title>
       </Head>
 
       <SettingsHeader />

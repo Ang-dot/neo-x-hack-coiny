@@ -44,6 +44,17 @@ const GameBoard = () => {
         setTimeout(() => setShowToast(false), 3000);
     };
 
+    const getGameState = (state) => {
+        const gameState = typeof state === 'bigint' ? Number(state) : Number(state);
+        switch (gameState) {
+            case 0: return "Not Started";
+            case 1: return "Waiting for Player 2";
+            case 2: return "Both players moved";
+            case 3: return "Game Finished";
+            default: return "Unknown";
+        }
+    };
+
     const shareToTwitter = async () => {
         try {
             setStatus('Capturing HTML content...');
@@ -66,7 +77,7 @@ const GameBoard = () => {
                 },
                 body: JSON.stringify({
                     image: dataUrl,
-                    tweet: `Check out my game summary from Ka-Ching! Scored big! Who's up for a challenge?\n#KaChingGame #VibeMode #GameSummary\nGame History #${gameID} 🎮\nStatus: ${getGameState(gameDetails[7])}\n\n${tweet}`, // Custom tweet text
+                    tweet: `Check out my game summary from Coiny! Scored big! Who's up for a challenge?\n#KaChingGame #VibeMode #GameSummary\nGame History #${gameID} 🎮\nStatus: ${getGameState(gameDetails[7])}\n\n${tweet}`, // Custom tweet text
                 }),
             });
 
@@ -94,6 +105,7 @@ const GameBoard = () => {
                 }
 
                 const moveMadeHandler = (gameId, player, event) => {
+                    console.log("Hello World");
                     const eventKey = `move-${gameId.toString()}-${player}`;
                     if (processedEvents.has(eventKey)) return;
                     processedEvents.add(eventKey);
@@ -207,7 +219,7 @@ const GameBoard = () => {
                                         </div>
 
                                         <Image
-                                            src="/images/Basketball.png"
+                                            src="/Basketball.png"
                                             alt="Wallet Logo"
                                             width={100}
                                             height={100}

@@ -5,7 +5,7 @@ class ProcessingService {
   constructor() {
     this.genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_API_KEY);
     this.model = this.genAI.getGenerativeModel({ model: "gemini-pro" });
-    
+
     // Supported chains for validation
     this.supportedChains = [
       'base sepolia',
@@ -20,6 +20,8 @@ class ProcessingService {
       'rome protocol',
       'hedera testnet',
       'scroll sepolia',
+      'neox testnet',
+      'neox mainnet',
     ].sort((a, b) => b.length - a.length);
   }
 
@@ -30,7 +32,7 @@ class ProcessingService {
 
   normalizeChainName(chain) {
     const normalizedChain = chain.toLowerCase().trim();
-    
+
     // Handle common variations
     const chainMappings = {
       'eth': 'sepolia',
@@ -59,9 +61,9 @@ class ProcessingService {
 
   extractAddresses(text) {
     const addressRegex = /0x[a-fA-F0-9]{40}/g;
-   
+
     const matches = Array.from(text.matchAll(addressRegex)) || [];
-    
+
     return matches
       .map(match => match[0])
       .filter(addr => this.validateEthereumAddress(addr));
@@ -70,8 +72,8 @@ class ProcessingService {
 
   extractChain(text) {
     const normalizedText = text.toLowerCase();
-    return this.supportedChains.find(chain => 
-      normalizedText.includes(chain) || 
+    return this.supportedChains.find(chain =>
+      normalizedText.includes(chain) ||
       normalizedText.includes(this.normalizeChainName(chain))
     );
   }
@@ -136,21 +138,21 @@ Or if information is missing:
     try {
       const result = await this.model.generateContent(prompt);
       const text = result.response.text();
-      
+
       // Extract JSON from the response
       const jsonMatch = text.match(/\{[\s\S]*\}/);
       if (!jsonMatch) {
         throw new Error('Failed to parse AI response');
       }
-      
+
       const response = JSON.parse(jsonMatch[0]);
-      
+
       // Validate AI response
       if (response.action === "Create Multisig") {
         // Validate addresses and chain
         const validAddresses = response.owners.filter(addr => this.validateEthereumAddress(addr));
         const validChain = this.normalizeChainName(response.chain);
-        
+
         if (validAddresses.length === 0 || !this.supportedChains.includes(validChain)) {
           return {
             action: "NEED_INFO",
@@ -161,13 +163,13 @@ Or if information is missing:
             userMessage: "Please provide valid Ethereum addresses and a supported blockchain network."
           };
         }
-        
+
         // Update response with validated data
         response.owners = validAddresses;
         response.chain = validChain;
         response.threshold = Math.min(response.threshold || 1, validAddresses.length);
       }
-      
+
       return response;
 
     } catch (error) {

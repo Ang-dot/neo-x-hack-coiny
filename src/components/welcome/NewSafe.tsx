@@ -8,7 +8,7 @@ const NewSafe = () => {
     <>
       <div className="mt-14 text-center md:mb-4 w-full">
         <h1 className="text-[#1F1D29] font-londrina text-[35px] sm:text-[55px] md:text-[100px] leading-tight sm:leading-relaxed md:leading-[94.64px]">
-          Get Started With <span className="text-[#E8A616] inline-block">Ka-Ching</span>
+          Get Started With <span className="text-[#E8A616] inline-block">Coiny</span>
         </h1>
         <h2 className="text-[#343235] font-londrina text-[18px] sm:text-[22px] md:text-[26px] leading-tight sm:leading-relaxed md:leading-[18.93px] py-6">
           Connect your wallet to create a new Safe Account or open an existing one

@@ -7,7 +7,7 @@ const Open: NextPage = () => {
   return (
     <main>
       <Head>
-        <title>{'Ka-Ching – Advanced Safe creation'}</title>
+        <title>{'Coiny – Advanced Safe creation'}</title>
       </Head>
 
       <AdvancedCreateSafe />

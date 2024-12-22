@@ -91,7 +91,7 @@ const GameNavbar = ({
                         <div className="flex items-center justify-between w-full h-14 px-4">
                             {/* Left side - Logo */}
                             <div className="flex items-center gap-2">
-                                <Link href="/home" className="text-2xl font-nountown text-white">Ka-Ching
+                                <Link href="/home" className="text-2xl font-nountown text-white">Coiny
                                 </Link>
                             </div>
 

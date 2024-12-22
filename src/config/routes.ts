@@ -61,5 +61,8 @@ export const AppRoutes = {
   game: {
     index: '/game',
     board: '/game/board'
+  },
+  chat: {
+    index: '/chat',
   }
 }

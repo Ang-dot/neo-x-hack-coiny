@@ -6,7 +6,7 @@ const Welcome: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Ka-Ching: AI Agent-Powered Multisig Wallet</title>
+        <title>Coiny: AI Agent-Powered Multisig Wallet</title>
       </Head>
       <meta
         name="description"

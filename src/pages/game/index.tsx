@@ -6,7 +6,7 @@ const Game: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ka-Ching – GameHome'}</title>
+        <title>{'Coiny – GameHome'}</title>
       </Head>
       {/* <main> */}
       <GameHome />

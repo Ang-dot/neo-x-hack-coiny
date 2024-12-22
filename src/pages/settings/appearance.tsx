@@ -27,7 +27,7 @@ const Appearance: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ka-Ching – Settings – Appearance'}</title>
+        <title>{'Coiny – Settings – Appearance'}</title>
       </Head>
 
       <SettingsHeader />

@@ -16,7 +16,7 @@ const NotificationsPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ka-Ching – Settings – Notifications'}</title>
+        <title>{'Coiny – Settings – Notifications'}</title>
       </Head>
 
       <SettingsHeader />

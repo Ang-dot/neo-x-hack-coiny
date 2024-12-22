@@ -10,7 +10,7 @@ const Modules: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ka-Ching – Settings – Modules'}</title>
+        <title>{'Coiny – Settings – Modules'}</title>
       </Head>
 
       <SettingsHeader />

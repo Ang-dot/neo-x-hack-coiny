@@ -7,7 +7,9 @@ import { type BrowserProvider, type Contract, type JsonRpcSigner, ethers } from 
 import Link from 'next/link';
 
 // Contract configuration
-const CONTRACT_ADDRESS = "0x240755c562ca5c3d280d0f77d6565150de2c763d";
+// const CONTRACT_ADDRESS = "0x240755c562ca5c3d280d0f77d6565150de2c763d";
+const CONTRACT_ADDRESS = "0x3d981849e32b8ec58dcab7706b667005880d5ac6";
+
 const CONTRACT_ABI = [
     {
         "inputs": [],

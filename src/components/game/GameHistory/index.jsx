@@ -52,7 +52,7 @@ const GameHistory = ({ gameID, gameDetails, setIsModalOpen }) => {
                 },
                 body: JSON.stringify({
                     image: dataUrl,
-                    tweet: `Check out my game history from Ka-Ching! Scored big! Who's up for a challenge?\n#KaChingGame #VibeMode #GameSummary\nGame History #${gameID} 🎮\nStatus: ${getGameState(gameDetails[7])}\n\n${tweet}`,
+                    tweet: `Check out my game history from Coiny! Scored big! Who's up for a challenge?\n#KaChingGame #VibeMode #GameSummary\nGame History #${gameID} 🎮\nStatus: ${getGameState(gameDetails[7])}\n\n${tweet}`,
                 }),
             });
 

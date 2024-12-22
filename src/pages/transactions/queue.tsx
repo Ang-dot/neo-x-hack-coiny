@@ -15,7 +15,7 @@ const Queue: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ka-Ching – Transaction queue'}</title>
+        <title>{'Coiny – Transaction queue'}</title>
       </Head>
 
       <BatchExecuteHoverProvider>

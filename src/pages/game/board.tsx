@@ -6,7 +6,7 @@ const Board: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ka-Ching – GameBoard'}</title>
+        <title>{'Coiny – GameBoard'}</title>
       </Head>
       {/* <main> */}
       <GameBoard />

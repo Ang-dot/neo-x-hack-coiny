@@ -74,8 +74,8 @@ export const getNetworkLink = (router: NextRouter, safeAddress: string, networkS
   const query = (
     isSafeOpened
       ? {
-          safe: `${networkShortName}:${safeAddress}`,
-        }
+        safe: `${networkShortName}:${safeAddress}`,
+      }
       : { chain: networkShortName }
   ) as {
     safe?: string
@@ -238,6 +238,31 @@ const UndeployedNetworks = ({
     setOpen((prev) => !prev)
   }
 
+  const NEOX_NETWORKS = {
+    MAINNET: {
+      chainId: '47763',
+      name: 'NeoX Mainnet',
+      shortName: 'neox',
+      rpcEndpoint: 'https://mainnet-1.rpc.banelabs.org',
+      wssEndpoint: 'wss://mainnet.wss1.banelabs.org/',
+      blockExplorer: 'https://xexplorer.neo.org',
+      currencySymbol: 'GAS',
+      isTestnet: false,
+      available: true,
+    },
+    TESTNET: {
+      chainId: '12227332',
+      name: 'NeoX T4',
+      shortName: 'neoxt4',
+      rpcEndpoint: 'https://neoxt4seed1.ngd.network',
+      wssEndpoint: 'wss://neoxt4wss1.ngd.network',
+      blockExplorer: 'https://xt4scan.ngd.network/',
+      currencySymbol: 'GAS',
+      isTestnet: true,
+      available: true,
+    },
+  }
+
   return (
     <>
       <ButtonBase className={css.listSubHeader} onClick={onShowAllNetworks} tabIndex={-1}>
@@ -259,13 +284,13 @@ const UndeployedNetworks = ({
           </Box>
         ) : (
           <>
-            {prodNets.map((chain) => (
+            {/* {prodNets.map((chain) => (
               <UndeployedNetworkMenuItem chain={chain} onSelect={onSelect} key={chain.chainId} />
             ))}
             {testNets.length > 0 && <TestnetDivider />}
             {testNets.map((chain) => (
               <UndeployedNetworkMenuItem chain={chain} onSelect={onSelect} key={chain.chainId} />
-            ))}
+            ))} */}
           </>
         )}
       </Collapse>
@@ -386,10 +411,10 @@ const NetworkSelector = ({
           },
           ...(isDarkMode
             ? {
-                '& .Mui-selected, & .Mui-selected:hover': {
-                  backgroundColor: `${theme.palette.secondary.background} !important`,
-                },
-              }
+              '& .Mui-selected, & .Mui-selected:hover': {
+                backgroundColor: `${theme.palette.secondary.background} !important`,
+              },
+            }
             : {}),
         },
       }}
@@ -399,7 +424,7 @@ const NetworkSelector = ({
         },
       }}
     >
-      {prodNets.map((chain) => renderMenuItem(chain.chainId, false))}
+      {/* {prodNets.map((chain) => renderMenuItem(chain.chainId, false))}
 
       {testNets.length > 0 && <TestnetDivider />}
 
@@ -412,7 +437,7 @@ const NetworkSelector = ({
           safeAddress={safeAddress}
           closeNetworkSelect={handleClose}
         />
-      )}
+      )} */}
     </Select>
   ) : (
     <Skeleton width={94} height={31} sx={{ mx: 2 }} />

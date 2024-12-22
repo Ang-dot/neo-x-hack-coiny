@@ -8,7 +8,7 @@ const Cookies: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ka-Ching – Settings – Cookies'}</title>
+        <title>{'Coiny – Settings – Cookies'}</title>
       </Head>
 
       <SettingsHeader />

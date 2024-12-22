@@ -27,6 +27,11 @@ export const navItems: NavItem[] = [
     href: AppRoutes.home,
   },
   {
+    label: 'AI Agent',
+    icon: <SvgIcon component={AssetsIcon} inheritViewBox />,
+    href: AppRoutes.chat.index,
+  },
+  {
     label: 'Assets',
     icon: <SvgIcon component={AssetsIcon} inheritViewBox />,
     href: AppRoutes.balances.index,

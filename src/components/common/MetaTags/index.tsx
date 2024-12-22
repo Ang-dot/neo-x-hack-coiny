@@ -6,7 +6,7 @@ import darkPalette from '@/components/theme/darkPalette'
 const descriptionText =
   'Wallet setup is so easy, even your grandparents could do it.\n' +
   'AI Agent-Powered Multisig Wallet + Explainable AI Fraudulent Transactions Detection + Gamified Gas Fees + Easy UI'
-const titleText = 'Ka-Ching: AI Agent-Powered Multisig Wallet'
+const titleText = 'Coiny: AI Agent-Powered Multisig Wallet'
 
 const MetaTags = ({ prefetchUrl }: { prefetchUrl: string }) => (
   <>
