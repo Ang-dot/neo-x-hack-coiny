@@ -3,11 +3,10 @@ import { safeCreationPendingStatuses } from '@/features/counterfactual/hooks/use
 import { SafeCreationEvent, safeCreationSubscribe } from '@/features/counterfactual/services/safeCreationEvents'
 import { useChain, useCurrentChain } from '@/hooks/useChains'
 import { useEffect, useState } from 'react'
-import { Box, Dialog, DialogContent, IconButton, Typography } from '@mui/material'
+import { Box, Dialog, DialogContent, Typography } from '@mui/material'
 import type { ChainInfo } from '@safe-global/safe-gateway-typescript-sdk'
 import NetworkLogosList from '../multichain/components/NetworkLogosList'
 import useAllAddressBooks from '@/hooks/useAllAddressBooks'
-import css from '@/components/common/TxModalDialog/styles.module.css'
 import CloseIcon from '@mui/icons-material/Close'
 
 const CounterfactualSuccessScreen = () => {

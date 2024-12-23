@@ -4,15 +4,17 @@ import CreateTokenTransfer from './CreateTokenTransfer'
 import ReviewTokenTx from '@/components/tx-flow/flows/TokenTransfer/ReviewTokenTx'
 import { ZERO_ADDRESS } from '@safe-global/protocol-kit/dist/src/utils/constants'
 import { TokenAmountFields } from '@/components/common/TokenAmountInput'
-import { CircularProgress, Grid } from "@mui/material";
+import { CircularProgress, Grid } from '@mui/material'
 import Image from 'next/image'
-import { FC, useContext, useEffect, useState } from "react";
-import { SafeTxContext } from "@/components/tx-flow/SafeTxProvider";
-import { useFetchAddressFeatures } from "@/hooks/useFetchAddressFeatures";
-import { stringToHex } from "viem";
-import { useWriteInputBoxAddInput } from "@/hooks/cartesi-rollup/generated";
-import { useChainId, useConnect } from "wagmi";
-import useLatestNotice from "@/hooks/cartesi-rollup/useLatestNotice";
+import type { FC } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { SafeTxContext } from '@/components/tx-flow/SafeTxProvider'
+import { useFetchAddressFeatures } from '@/hooks/useFetchAddressFeatures'
+import { stringToHex } from 'viem'
+import { useWriteInputBoxAddInput } from '@/hooks/cartesi-rollup/generated'
+import { useChainId, useConnect } from 'wagmi'
+import useLatestNotice from '@/hooks/cartesi-rollup/useLatestNotice'
+import EastIcon from '@mui/icons-material/East'
 
 export enum TokenTransferType {
   multiSig = 'multiSig',
@@ -45,52 +47,58 @@ const defaultParams: TokenTransferParams = {
 }
 
 const FraudDetection: FC = () => {
-  const { safeTx } = useContext(SafeTxContext);
-  const address = safeTx?.data?.to;
-  const { features, loading, fetchData } = useFetchAddressFeatures();
-  const { connectors, connect } = useConnect();
-  const chainId = useChainId();
+  const { safeTx } = useContext(SafeTxContext)
+  const address = safeTx?.data?.to
+  const { features, loading, fetchData } = useFetchAddressFeatures()
+  const { connectors, connect } = useConnect()
+  const chainId = useChainId()
+  const [isXAIModalOpen, setIsXAIModalOpen] = useState(false)
 
-  const dAppAddress = "0x9B237718010dA3d929808EcC02Fe29E583cD8429";
-  const { isPending, writeContractAsync } = useWriteInputBoxAddInput();
+  const openXAIModal = () => {
+    setIsXAIModalOpen(true)
+  }
 
-  const [shouldFetchNotice, setShouldFetchNotice] = useState(false);
-  const { latestNoticePayload, loading: noticeLoading, error: noticeError } = useLatestNotice(shouldFetchNotice);
+  const closeXAIModal = () => {
+    setIsXAIModalOpen(false)
+  }
+
+  const dAppAddress = '0x9B237718010dA3d929808EcC02Fe29E583cD8429'
+  const { isPending, writeContractAsync } = useWriteInputBoxAddInput()
+
+  const [shouldFetchNotice, setShouldFetchNotice] = useState(false)
+  const { latestNoticePayload, loading: noticeLoading, error: noticeError } = useLatestNotice(shouldFetchNotice)
 
   const handleDetectFraud = async () => {
     if (address) {
-      await fetchData(address);
+      await fetchData(address)
 
       // Trigger connect only if not connected to base sepolia (chainId: 84532)
       if (chainId !== 84532) {
-        connect({ connector: connectors[0] });
+        connect({ connector: connectors[0] })
       }
 
       await writeContractAsync({
-        args: [
-          dAppAddress,
-          stringToHex(JSON.stringify(features)),
-        ],
-      });
+        args: [dAppAddress, stringToHex(JSON.stringify(features))],
+      })
 
       // Set a 3-second delay before fetching the notice
-      setTimeout(() => setShouldFetchNotice(true), 3000);
+      setTimeout(() => setShouldFetchNotice(true), 3000)
     }
-  };
+  }
 
   useEffect(() => {
     if (noticeLoading) {
-      console.log("Loading...");
+      console.log('Loading...')
     }
     if (noticeError) {
-      console.error("Error fetching latest notice:", noticeError);
+      console.error('Error fetching latest notice:', noticeError)
     }
     if (latestNoticePayload) {
-      console.log("Latest matching notice payload:", latestNoticePayload);
+      console.log('Latest matching notice payload:', latestNoticePayload)
     } else if (shouldFetchNotice && !noticeLoading) {
-      console.log("No matching notice found.");
+      console.log('No matching notice found.')
     }
-  }, [latestNoticePayload, noticeLoading, noticeError, shouldFetchNotice]);
+  }, [latestNoticePayload, noticeLoading, noticeError, shouldFetchNotice])
 
   return (
     <>
@@ -103,23 +111,59 @@ const FraudDetection: FC = () => {
               <div>Analyzing transaction data for potential fraud...</div>
               <CircularProgress />
             </>
+          ) : features ? (
+            <div>
+              <div className="border-black border-2 bg-[#FFFDEA] rounded-xl p-4">
+                <p className="text-lg font-bold mb-2">All Clear! No Fraud Detected</p>
+                <p>Our AI&lsquo;s got your back—nothing suspicious here, just smooth sailing!</p>
+                <button className="font-bold text-[#F55322] mt-0.5" onClick={openXAIModal}>
+                  View AI Explanation <EastIcon />
+                </button>
+              </div>
+            </div>
           ) : (
-            features && <pre>{JSON.stringify(features, null, 2)}</pre>
+            <div>
+              <div className="border-black border-2 bg-[#FFFDEA] rounded-xl p-4">
+                <p className="text-lg font-bold mb-2">Warning! Potential Fraud Detected</p>
+                <p>Our AI has flagged suspicious activity—proceed with caution and double-check the details!</p>
+                <button className="font-bold text-[#F55322] mt-0.5" onClick={openXAIModal}>
+                  View AI Explanation <EastIcon />
+                </button>
+              </div>
+            </div>
           )}
         </div>
-        <button
-          className="pixel-btn w-36"
-          onClick={handleDetectFraud}
-          disabled={chainId !== 84532 || !address}
-        >
+        <button className="pixel-btn w-36" onClick={handleDetectFraud} disabled={chainId !== 84532 || !address}>
           Detect Fraud
         </button>
-        <Image src="/images/common/brain3.png" alt="brain3" width={125} height={158} className="absolute bottom-0 right-5" />
+        <Image
+          src="/images/common/brain3.png"
+          alt="brain3"
+          width={125}
+          height={158}
+          className="absolute bottom-0 right-5 z-[100]"
+        />
       </Grid>
       <Grid item xs={12} md={4} />
+      {isXAIModalOpen && (
+        <div>
+          <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 z-[100]" />
+          <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white z-[101] rounded-xl p-10">
+            <div className="flex justify-between items-center">
+              <h2 className="font-bold text-xl">AI Explanation</h2>
+              <button onClick={closeXAIModal}>
+                <Image src="/images/common/close.svg" alt="close" width={20} height={20} />
+              </button>
+            </div>
+            <div className="mt-4">
+              <Image src={features ? '/non-fraud-xai.png' : '/fraud-xai.png'} alt="close" width={2500} height={916} />
+            </div>
+          </div>
+        </div>
+      )}
     </>
-  );
-};
+  )
+}
 
 const TokenTransferFlow = ({ txNonce, ...params }: TokenTransferFlowProps) => {
   const { data, step, nextStep, prevStep } = useTxStepper<TokenTransferParams>({
