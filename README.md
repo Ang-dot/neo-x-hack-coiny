@@ -2,9 +2,9 @@
 
 <div align="center">
   
-  <img src="brand-assets/app_logo.gif" alt="Ka-Ching logo" width="120" height="120">
+  <img src="brand-assets/app_logo.gif" alt="Coiny logo" width="120" height="120">
 
- # 𝐊𝐚-𝐂𝐡𝐢𝐧𝐠: 𝐀𝐈 𝐀𝐠𝐞𝐧𝐭-𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐌𝐮𝐥𝐭𝐢𝐬𝐢𝐠 𝐖𝐚𝐥𝐥𝐞𝐭
+ # Coiny: 𝐀𝐈 𝐀𝐠𝐞𝐧𝐭-𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐌𝐮𝐥𝐭𝐢𝐬𝐢𝐠 𝐖𝐚𝐥𝐥𝐞𝐭
 
   
   <h3>Wallet setup so easy, your grandma could do it.</h3>
@@ -60,7 +60,7 @@
 
 ---
 ## 𝐎𝐯𝐞𝐫𝐯𝐢𝐞𝐰
-𝐊𝐚-𝐂𝐡𝐢𝐧𝐠 is an AI-driven multisig wallet designed to make managing and securing digital assets simple and accessible. Powered by advanced AI features and decentralized protocols, Ka-Ching enables real-time fraud detection, AI-assisted wallet creation, customizable security, and a gamified experience—all built to work seamlessly in the Web 3 ecosystem.
+𝐊𝐚-𝐂𝐡𝐢𝐧𝐠 is an AI-driven multisig wallet designed to make managing and securing digital assets simple and accessible. Powered by advanced AI features and decentralized protocols, Coiny enables real-time fraud detection, AI-assisted wallet creation, customizable security, and a gamified experience—all built to work seamlessly in the Web 3 ecosystem.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -85,7 +85,7 @@ With a single prompt, users can set up a multisig wallet without the usual repet
 Integrated **Two-Factor Authentication (2FA)** powered by **WorldID** adds an extra layer of security with privacy-preserving, zero-knowledge proofs.
 
 ### 🎮 Bonus: The Thai Challenge: A New Take on Rock, Paper, Scissors
-Adding a unique twist, Ka-Ching features a blockchain-powered game inspired by Thai street life—Tuk-Tuk, Traffic Jam, and Food Cart—where users can settle the age-old question of "Who’s covering the gas fee?" 
+Adding a unique twist, Coiny features a blockchain-powered game inspired by Thai street life—Tuk-Tuk, Traffic Jam, and Food Cart—where users can settle the age-old question of "Who’s covering the gas fee?" 
 
 | **Element**   | **Defeats**    | **Reason**                                                    |
 |---------------|----------------|----------------------------------------------------------------|
@@ -100,7 +100,7 @@ Adding a unique twist, Ka-Ching features a blockchain-powered game inspired by T
 
 ## 𝐆𝐞𝐭𝐭𝐢𝐧𝐠 𝐒𝐭𝐚𝐫𝐭𝐞𝐝
 
-To get started with Ka-Ching:
+To get started with Coiny:
 1. Clone the repository.
 2. Set up your wallet using our AI Agent-Powered Wallet Creation feature with a single prompt.
 3. Explore features like on-chain notifications, customized security, and fraud detection.
@@ -111,7 +111,7 @@ To get started with Ka-Ching:
 
 ## 𝐔𝐬𝐞𝐫 𝐈𝐧𝐭𝐞𝐫𝐟𝐚𝐜𝐞
 
-The Ka-Ching wallet interface is designed for simplicity, allowing users of all experience levels to interact with their assets intuitively. Core features like transaction approval, fraud alerts, and wallet customization are accessible via a clean, user-friendly layout.
+The Coiny wallet interface is designed for simplicity, allowing users of all experience levels to interact with their assets intuitively. Core features like transaction approval, fraud alerts, and wallet customization are accessible via a clean, user-friendly layout.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -127,13 +127,13 @@ The Ka-Ching wallet interface is designed for simplicity, allowing users of all 
 
 ## 𝐌𝐚𝐫𝐤𝐞𝐭 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬
 
-The demand for secure, AI-enhanced multisig wallets is surging, with the blockchain market projected to grow at an 85.9% CAGR through 2030 (Grand View Research). Ka-Ching targets high-value segments including:
+The demand for secure, AI-enhanced multisig wallets is surging, with the blockchain market projected to grow at an 85.9% CAGR through 2030 (Grand View Research). Coiny targets high-value segments including:
 
 - **DAOs and DeFi Projects**: These entities require secure, transparent, and collaborative asset management solutions. With over $75 billion locked in DeFi as of 2023, there is substantial demand for multisig wallets that prioritize security and fraud detection.
   
-- **Institutional Investors**: As 47% of hedge funds plan digital asset investments by 2024 (PwC), Ka-Ching’s AI-driven fraud detection aligns well with institutional needs for regulatory compliance and ease of use.
+- **Institutional Investors**: As 47% of hedge funds plan digital asset investments by 2024 (PwC), Coiny’s AI-driven fraud detection aligns well with institutional needs for regulatory compliance and ease of use.
 
-- **High-net-worth Individuals and Family Offices**: Increasingly investing in crypto, over 12% of family offices now hold digital assets. Ka-Ching's user-friendly wallet creation and fraud insights serve this segment’s demand for secure management tools.
+- **High-net-worth Individuals and Family Offices**: Increasingly investing in crypto, over 12% of family offices now hold digital assets. Coiny's user-friendly wallet creation and fraud insights serve this segment’s demand for secure management tools.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -141,7 +141,7 @@ The demand for secure, AI-enhanced multisig wallets is surging, with the blockch
 
 ## Project Impact
 
-Investing in Ka-Ching means supporting a transformative leap in the DeFi space. Our Explainable AI-powered multisig wallet addresses two of the biggest challenges in decentralized finance—security and usability. By proactively detecting and explaining potential fraud before transactions occur, Ka-Ching provides users with a level of confidence and control that’s rare in today’s DeFi ecosystem. This isn’t just about protecting individual users; it’s about building trust across the entire Web3 economy, reducing fraud, and empowering more people to participate safely in decentralized finance.
+Investing in Coiny means supporting a transformative leap in the DeFi space. Our Explainable AI-powered multisig wallet addresses two of the biggest challenges in decentralized finance—security and usability. By proactively detecting and explaining potential fraud before transactions occur, Coiny provides users with a level of confidence and control that’s rare in today’s DeFi ecosystem. This isn’t just about protecting individual users; it’s about building trust across the entire Web3 economy, reducing fraud, and empowering more people to participate safely in decentralized finance.
 
 ## Contract Deployment (Verified)
 
