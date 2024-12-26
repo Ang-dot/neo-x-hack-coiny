@@ -15,16 +15,10 @@
 
 
   <div align="center">
-    <a href="https://www.canva.com/design/DAGTitVXqlE/OmAGwNlMETwuiE7WTlD7QQ/view?utm_content=DAGTitVXqlE&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank">
+    <a href="https://www.canva.com/design/DAGTitVXqlE/t7WkGXMlWDlaivduh9fXww/edit?utm_content=DAGTitVXqlE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
       <img src="https://img.shields.io/badge/View%20Whitepaper-E6A8D7?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Whitepaper" />
     </a>
-    <a href="https://link-to-app.com" target="_blank">
-      <img src="https://img.shields.io/badge/View%20App-FCC1A0?style=for-the-badge&logo=google-play&logoColor=white" alt="App" />
-    </a>
-    <a href="https://link-to-landing-page.com" target="_blank">
-      <img src="https://img.shields.io/badge/Landing%20Page-92D8D8?style=for-the-badge&logo=wordpress&logoColor=white" alt="Landing Page" />
-    </a>
-    <a href="https://link-to-pitch-deck.com" target="_blank">
+    <a href="https://www.canva.com/design/DAGWFu9r5Tg/KvKgIk_9lf0UqSxUlkW_Tg/edit?utm_content=DAGWFu9r5Tg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
       <img src="https://img.shields.io/badge/View%20Pitch%20Deck-B9E8E0?style=for-the-badge&logo=slideshare&logoColor=white" alt="Pitch Deck" />
     </a>
   </div>
@@ -34,13 +28,10 @@
   <!-- "Powered by" logos section -->
   <h4>Powered by:</h4>
   <div>
-    <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum" width="40" height="40" style="margin: 10px;">
-    <img src="https://cryptologos.cc/logos/gnosis-gno-gno-logo.png?v=035" alt="Gnosis" width="40" height="40" style="margin: 10px;">
-    <img src="https://github.com/xmtp/brand/blob/main/assets/x-mark-purple.png?raw=true" alt="XMTP" width="40" height="40" style="margin: 10px;">
+    <img src="brand-assets/neo_x_logo.png" alt="Neo X" width="40" height="40" style="margin: 10px;">
     <img src="https://cryptologos.cc/logos/worldcoin-org-wld-logo.png?v=035" alt="World ID" width="40" height="40" style="margin: 10px;">
     <img src="https://cdn.prod.website-files.com/626692727bba3f384e008e8a/6499b55a681541b17b9c9854_logo-white-dynamic.png" alt="Dynamic" width="60" height="40" style="margin: 10px;">
-    <img src="https://ens.domains/assets/brand/mark/ens-mark-Blue.svg" alt="Nouns DAO" width="40" height="40" style="margin: 10px;">
-    <img src="https://cryptologos.cc/logos/cartesi-ctsi-logo.png" alt="Nouns DAO" width="40" height="40" style="margin: 10px;">  
+    <img src="brand-assets/blockscout_logo.png" alt="Blockscout" width="60" height="40" style="margin: 10px;">
   </div>
 
 </div>
